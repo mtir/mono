@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="joueur">
+            <h2><span jhiTranslate="mywebApp.joueur.detail.title">Joueur</span> {{ joueur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="mywebApp.joueur.nomJ">Nom J</span></dt>
+                <dd>
+                    <span>{{ joueur.nomJ }}</span>
+                </dd>
+                <dt><span jhiTranslate="mywebApp.joueur.prenomJ">Prenom J</span></dt>
+                <dd>
+                    <span>{{ joueur.prenomJ }}</span>
+                </dd>
+                <dt><span jhiTranslate="mywebApp.joueur.numJ">Num J</span></dt>
+                <dd>
+                    <span>{{ joueur.numJ }}</span>
+                </dd>
+                <dt><span jhiTranslate="mywebApp.joueur.match">Match</span></dt>
+                <dd>
+                    <div *ngIf="joueur.match">
+                        <a [routerLink]="['/match', joueur.match?.id, 'view']">{{ joueur.match?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/joueur', joueur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

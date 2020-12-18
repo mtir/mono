@@ -1,0 +1,43 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "joueur",
+      "otherEntityName": "joueur",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "match"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "nomM",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "numM",
+      "fieldType": "Integer",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "dureeM",
+      "fieldType": "Duration",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "dateM",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": []
+    }
+  ],
+  "changelogDate": "20201217191349",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "jhi_match",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}
